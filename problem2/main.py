@@ -1,72 +1,27 @@
-def primeX(x):
-    if x <= 1:
+def is_prime(y):
+    if y <= 1:
         return False
-    elif x <= 3:
+    elif y <= 3:
         return True
-    elif x % 2 == 0 or x % 3 == 0:
+    elif y % 2 == 0 or y % 3 == 0:
         return False
-    
     i = 5
-    while i * i <= x:
-        if x % i == 0 or x % (i + 2) == 0:
+    while i * i <= y:
+        if y % i == 0 or y % (i + 2) == 0:
             return False
         i += 6
     return True
 
-def primeX(n):
+def primeX(x):
     count = 0
-    num = 2
+    num = 2 
 
     while True:
-        if primeX(num):
+        if is_prime(num):
             count += 1
-            if count == n:
+            if count == x:
                 return num
         num += 1
-n = primeX
-
-    # if x <= 1:
-    #     return False
-    # elif x <= 3:
-    #     return True
-    # elif x % 2 == 0 or x % 3 == 0:
-    #     return False
-    
-    # i = 5
-    # while i * i <= x:
-    #     if x % i == 0 or x % (i + 2) == 0:
-    #         return False
-    # i = 5
-    # while i * i <= x:
-    #     if x % i == 0 or x % (i + 2) == 0:
-    #         return False
-    #     i += 6
-    #     return True
-    
-    # def primeX(x):
-    #     count = 0
-    #     num = x
-    
-
-    #     while True:
-    #         if primeX(num):
-    #             count += 1
-    #             if count == x:
-    #                 return num
-    #             num += 1
-
-#     prime = True
-#     for i in range(2, x):
-#         if(x % i == 0):
-#             prime = False
-#             break
-#     return prime
-
-# min = 2
-# max = 29
-# for i in range(min, max + 1):
-#     if primeX(i):
-#         return primeX
 
 if __name__ == "__main__":
     print(primeX(1))  # 2

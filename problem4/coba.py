@@ -12,27 +12,20 @@ def is_prime(num):
         i += 6
     return True
 
-def generate_prime_grid(height, width, start):
-    prime_grid = []
+def primeX(x):
+    count = 0
+    num = 2  # Start checking prime numbers from 2
 
-    num = start
-    for _ in range(height):
-        row = []
-        for _ in range(width):
-            while not is_prime(num):
-                num += 1
-            row.append(num)
-            num += 1
-        prime_grid.append(row)
+    while True:
+        if is_prime(num):
+            count += 1
+            if count == x:
+                return num
+        num += 1
 
-    return prime_grid
-
-height = 2  # Ganti dengan tinggi segiempat yang diinginkan
-width = 5   # Ganti dengan lebar segiempat yang diinginkan
-start = 1   # Ganti dengan bilangan prima pertama yang Anda inginkan
-
-prime_square = generate_prime_grid(height, width, start)
-
-# Menampilkan segiempat bilangan prima
-for row in prime_square:
-    print(row)
+if __name__ == "__main__":
+    print(primeX(1))  # 2
+    print(primeX(5))  # 11
+    print(primeX(8))  # 19
+    print(primeX(9))  # 23
+    print(primeX(10)) # 29

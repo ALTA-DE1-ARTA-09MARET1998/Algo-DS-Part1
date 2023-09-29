@@ -35,11 +35,7 @@ def generate_primes_grid(width, height, start):
     #     generate_primes_grid.append(row)
 
     # return prime_grid
-    prime_square = generate_primes_grid(height, width, start)
 
-# Menampilkan segiempat bilangan prima
-    for row in prime_square:
-        print(row)
 if __name__ == "__main__":
     print(generate_primes_grid(2, 3, 13))
     """
